@@ -62,8 +62,8 @@ export const todolist = (state = [], action) => {
             })
         }
         case LOAD_TASKS_SUCCESS: {
-            const { todolist } = payload;
-            return todolist;
+            const { data } = payload;
+            return data;
         }
         case LOAD_TASKS_START:
         case LOAD_TASKS_FAIL:

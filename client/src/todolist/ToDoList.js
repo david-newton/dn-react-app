@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { Button } from 'reactstrap';
 
 //page specific imports
@@ -16,9 +16,11 @@ import { loadTodoList } from './thunks/thunks';
 import './ToDoList.css';
 
 const ToDoList = ({ listItems = [], onDeleteClicked, onCompleteClicked, onCompleteAllClicked, isLoading, startLoadingTodoList }) => {
+    const dispatch = useDispatch();
+
     useEffect(() => {
-        startLoadingTodoList();
-    }, [startLoadingTodoList])
+        dispatch(startLoadingTodoList());
+    }, [])
     
     const loadingMessage = <div>Loading...</div>;
 

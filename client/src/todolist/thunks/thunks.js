@@ -8,7 +8,7 @@ export const displayAlert = text => () => {
 export const loadTodoList = () => async (dispatch, getState) => {
     try {
         dispatch(loadTasksStart());
-        const response = await fetch('http://localhost:8080/todos');
+        const response = await fetch('http://localhost:3001/getTasks');
         const taskList = await response.json();
     
         dispatch(loadTasksSuccess(taskList));
