@@ -20,7 +20,7 @@ const ToDoList = ({ listItems = [], onDeleteClicked, onCompleteClicked, onComple
 
     useEffect(() => {
         dispatch(startLoadingTodoList());
-    }, [])
+    }, [dispatch, startLoadingTodoList])
     
     const loadingMessage = <div>Loading...</div>;
 
